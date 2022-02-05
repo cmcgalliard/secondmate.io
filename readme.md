@@ -27,3 +27,15 @@ metadata:
     secondmate.io/purge-tz: EST
   name: test-true
 ````
+
+Example Run:
+```
+--- config ---
+dry-run: false 
+labelMatcher: secondmate.io/purge=true 
+--- config ---
+
+PURGE     Namespace     Created                           PurgeDate                         NamespaceDeleted
+---       ---           ---                               ---                               ---
+false     test-true     2022-02-05 16:36:48 -0500 EST     2022-03-20 16:00:00 -0400 EDT     false
+```

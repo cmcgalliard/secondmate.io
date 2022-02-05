@@ -19,7 +19,7 @@ func main() {
 	fmt.Printf("--- config ---\n")
 	fmt.Printf("dry-run: %t \n", *dryrun)
 	fmt.Printf("labelMatcher: %s \n", *labelMatcher)
-	fmt.Printf("--- config ---\n")
+	fmt.Printf("--- config ---\n\n")
 	
 	// Setup the Kubernetes Client Connection
 	var clientset *kubernetes.Clientset
@@ -33,7 +33,7 @@ func main() {
 
 	namespaces := kubernetesapi.GetNameSpaces(clientset, *labelMatcher)
 	w := tabwriter.NewWriter(os.Stdout, 1, 1, 5, ' ', 0)
-	fmt.Fprint(w, "PURGE\tNamespace\tCreated\tPurgeDate\tNamespaceDeleted\n")
+	fmt.Fprint(w, "PURGE\tNamespace\tCreated\tPurgeDate\tNamespaceDeleted\n---\t---\t---\t---\t---\n")
 
 	for _, namespace := range namespaces.Items {
 		purgeDateLayout := "2006-01-02 15:04 MST"
