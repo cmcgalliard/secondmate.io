@@ -1,0 +1,5 @@
+imageTag: latest
+schedule: "10 * * * *"
+dryrun: false
+label: helm-auto-purge.io/purge=true
+nsFilter: qa

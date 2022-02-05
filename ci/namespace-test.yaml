@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: test-true
+    secondmate.io/purge: "true"
+    secondmate.io/purge-date: "2022-03-20"
+    secondmate.io/purge-hour: "15"
+    secondmate.io/purge-tz: EST
+  name: test-true

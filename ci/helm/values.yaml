@@ -1,0 +1,4 @@
+imageTag: latest
+schedule: "43 * * * *"
+dryrun: false
+label: secondmate.io/purge=true

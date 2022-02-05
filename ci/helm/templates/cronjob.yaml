@@ -1,0 +1,20 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: secondmate
+spec:
+  schedule: {{ .Values.schedule | quote }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: secondmate
+            image: cmcgalliard/secondmate:0.0.1
+            imagePullPolicy: Always
+            command:
+            - ./app/secondmate
+            - --dry-run={{ .Values.dryrun }}
+            - --label={{ .Values.label }}
+          serviceAccountName: secondmate
+          restartPolicy: OnFailure
